@@ -17,11 +17,11 @@
 --tg:#666;
 --fg:#bbb;
 }}
-body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;place-content:center;gap:1em;min-height:100vh;margin:0}
+body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;align-content:center;justify-items:center;gap:1em;min-height:100vh;margin:0}
 h1,h2,h3{margin:0}
-section{display:flex}
-section[time],section[events]{display:grid;gap:0 .25em;grid-template-columns:1fr 1fr}
-table{text-align:center;border-collapse:collapse;border-color:var(--tg)}
+section{display:grid;}
+section[time]{display:grid;gap:0 2em;grid-template-columns:1fr min-content}
+table{text-align:center;border-collapse:collapse;border-color:var(--tg);margin:0 1em}
 td,th{padding:.5em;border-color:var(--tg)}
 .mon [w1],.tue [w2],.wed [w3],.thu [w4],.fri [w5],.sat [w6],.sun [w7]{background:var(--cg)}
 </style>
