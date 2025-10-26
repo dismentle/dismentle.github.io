@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content=width=device-width>
+<title>/sora/ dashboard</title>
+<style>
+:root{
+--bg:#fff;
+--cg:#ddd;
+--dg:#ccc;
+--tg:#555;
+--fg:#000;
+}@media(prefers-color-scheme:dark){:root{
+--bg:#222;
+--cg:#333;
+--dg:#444;
+--tg:#666;
+--fg:#bbb;
+}}
+body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;place-content:center;gap:1em;min-height:100vh;margin:0}
+h1,h2,h3{margin:0}
+section{display:flex}
+section[time],section[events]{display:grid;gap:0 .25em;grid-template-columns:1fr 1fr}
+table{text-align:center;border-collapse:collapse;border-color:var(--tg)}
+td,th{padding:.5em;border-color:var(--tg)}
+.mon [w1],.tue [w2],.wed [w3],.thu [w4],.fri [w5],.sat [w6],.sun [w7]{background:var(--cg)}
+</style>
+<script type=module>
+const init=_=>{
+	update()
+	arena.className = time.weekday(new Date())
+	tick({detail:new Date()})
+	document.addEventListener('tick',tick)
+}
+const update=ts=>{
+	const dt = new Date()
+	const ms = dt.getMilliseconds()
+	if (ts > ms || !ts) document.dispatchEvent(new CustomEvent('tick',{detail:dt}))
+	requestAnimationFrame(_=>{update(ms)})
+}
+const tick=({detail:dt})=>{
+	datetime.textContent = time.server(dt)
+	reset.textContent = time.countdown(dt)
+	arena.className = time.weekday(new Date())
+}
+const time={
+	server (dt) {return dt.toLocaleTimeString('en', {hour12:false,timeZone:'-0700'})},
+	countdown (dt) {
+		const cd = new Date(dt.toISOString().slice(0,10)+'T13:00:01-0700')
+		if (dt > cd) cd.setDate(cd.getDate() + 1)
+		return this.hhmmss(cd-dt)
+	},
+	hhmmss (ts) {return[Infinity,3600,60].map((x,i)=>(~~((ts*.001)%x/60**(2-i))).toString().padStart(2,0)).join(':')},
+	weekday (dt,format='short') {return dt.toLocaleString('en',{weekday:format,timeZone:'-2000'}).toLowerCase()},
+}
+init()
+</script>
+<h1>stella sora stuff</h1>
+<section time>
+<b>reset countdown</b>
+<span id=reset></span>
+<b>server time</b>
+<span id=datetime></span>
+<b>eos status</b>
+<span>not yet</span>
+</section>
+<section arena>
+	<table id=arena border=1 >
+	<tr><th colspan=7>arena</th></tr>
+	<th w1>mon<th w2>tue<th w3>wed<th w4>thu<th w5>fri<th w6>sat<th w7>sun
+	<tr><td w1>fire<br>water
+		<td w2>wind<br>earth
+		<td w3>light<br>dark
+		<td w4>fire<br>water
+		<td w5>wind<br>earth
+		<td w6>light<br>dark
+		<td w7>all
+	</table>
+</section>
