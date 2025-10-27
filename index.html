@@ -17,11 +17,13 @@
 --tg:#666;
 --fg:#bbb;
 }}
-body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;align-content:center;justify-items:center;gap:1em;min-height:100vh;margin:0}
+body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;place-items:center;gap:1em;min-height:100vh;margin:0}
+main{padding:0 1em;display:grid;gap:1em}
 h1,h2,h3{margin:0}
-section{display:grid;}
-section[time]{display:grid;gap:0 2em;grid-template-columns:1fr min-content}
-table{text-align:center;border-collapse:collapse;border-color:var(--tg);margin:0 1em}
+section[events]{display:grid;gap:.5em}
+article{display:flex;justify-content:space-between}
+article.event{background:var(--cg);padding:.8em}
+table{text-align:center;border-collapse:collapse;border-color:var(--tg)}
 td,th{padding:.5em;border-color:var(--tg)}
 .mon [w1],.tue [w2],.wed [w3],.thu [w4],.fri [w5],.sat [w6],.sun [w7]{background:var(--cg)}
 </style>
@@ -29,6 +31,7 @@ td,th{padding:.5em;border-color:var(--tg)}
 const init=_=>{
 	update()
 	arena.className = time.weekday(new Date())
+	events.map(x=>event.new(x))
 	tick({detail:new Date()})
 	document.addEventListener('tick',tick)
 }
@@ -50,19 +53,43 @@ const time={
 		if (dt > cd) cd.setDate(cd.getDate() + 1)
 		return this.hhmmss(cd-dt)
 	},
+	remains (ts) {return ((ts>86400000)?~~(ts/86400000)+' Day'+(~~(ts/86400000)==1?'':'s'):'')+' '+this.hhmmss(ts%86400000)},
 	hhmmss (ts) {return[Infinity,3600,60].map((x,i)=>(~~((ts*.001)%x/60**(2-i))).toString().padStart(2,0)).join(':')},
 	weekday (dt,format='short') {return dt.toLocaleString('en',{weekday:format,timeZone:'-2000'}).toLowerCase()},
 }
+const event={
+	new(def) {
+		const el = document.createElement('article')
+		el.className='event'
+		el.innerHTML = `<b>${def.name}</b>`
+		const cd = document.createElement('span')
+		el.appendChild(cd)
+		const listener =_=>{
+			const dt = new Date()
+			const state = (dt<def.start?'starts':'ends')+' in '
+			cd.innerText=state+time.remains((dt<def.start?def.start:def.end) - dt)
+			if(dt>def.end) el.remove()
+		}
+		listener()
+		document.addEventListener('tick',listener)
+		document.querySelector('section[events]').appendChild(el)
+	}
+}
+const events = [
+	{start:new Date('2025-10-27T20:00:01-0700'),end:new Date('2025-10-28T02:00:01-0700'),name:'maintenance'},
+	{start:new Date('2025-10-28T02:00:01-0700'),end:new Date('2025-11-10T13:00:00-0700'),name:'shia event'},
+]
 init()
 </script>
+<main>
 <h1>stella sora stuff</h1>
 <section time>
-<b>reset countdown</b>
-<span id=reset></span>
-<b>server time</b>
-<span id=datetime></span>
-<b>eos status</b>
-<span>not yet</span>
+<article><b>reset countdown</b>
+<span id=reset></span></article>
+<article><b>server time</b>
+<span id=datetime></span></article>
+<article><b>eos status</b>
+<span>delayed</span></article>
 </section>
 <section arena>
 	<table id=arena border=1 >
@@ -77,3 +104,6 @@ init()
 		<td w7>all
 	</table>
 </section>
+<h3>events</h3>
+<section events></section>
+</main>
