@@ -25,7 +25,7 @@ h1,h2,h3{margin:0}
 section[events]{display:grid;gap:.5em}
 article{display:flex;justify-content:space-between}
 article.event{background:var(--cg);padding:.8em}
-table{text-align:center;border-collapse:collapse;border-color:var(--tg)}
+table{text-align:center;border-collapse:collapse;background:var(--bg);border-color:var(--tg)}
 td,th{padding:.5em;border-color:var(--tg)}
 .mon [w1],.tue [w2],.wed [w3],.thu [w4],.fri [w5],.sat [w6],.sun [w7]{background:var(--cg)}
 img[src='gloom.png']{z-index:-1;position:fixed;bottom:0;right:0;max-width:70vw;opacity:var(--io)}
@@ -62,6 +62,7 @@ const time={
 }
 const event={
 	new(def) {
+		if(new Date()>def.end) return
 		const el = document.createElement('article')
 		el.className='event'
 		el.innerHTML = `<b>${def.name}</b>`
