@@ -10,12 +10,14 @@
 --dg:#ccc;
 --tg:#555;
 --fg:#000;
+--io:.2;
 }@media(prefers-color-scheme:dark){:root{
 --bg:#222;
 --cg:#333;
 --dg:#444;
 --tg:#666;
 --fg:#bbb;
+--io:.8;
 }}
 body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;place-items:start center;gap:1em;min-height:100vh;margin:0}
 main{padding:1em;display:grid;gap:1em}
@@ -26,6 +28,7 @@ article.event{background:var(--cg);padding:.8em}
 table{text-align:center;border-collapse:collapse;border-color:var(--tg)}
 td,th{padding:.5em;border-color:var(--tg)}
 .mon [w1],.tue [w2],.wed [w3],.thu [w4],.fri [w5],.sat [w6],.sun [w7]{background:var(--cg)}
+img[src='gloom.png']{z-index:-1;position:fixed;bottom:0;right:0;max-width:70vw;opacity:var(--io)}
 </style>
 <script type=module>
 const init=_=>{
@@ -106,3 +109,4 @@ init()
 <h3>events</h3>
 <section events></section>
 </main>
+<img src=gloom.png>
