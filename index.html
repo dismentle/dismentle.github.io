@@ -5,19 +5,19 @@
 <title>/sora/ dashboard</title>
 <style>
 :root{
---bg:#fff;
---cg:#ddd;
+--bg:#eee;
+--cg:#ccc;
 --tg:#555;
 --fg:#000;
 --bs:#0002;
---io:.2;
+--io:0.2;
 }@media(prefers-color-scheme:dark){:root{
 --bg:#333;
 --cg:#444;
 --tg:#777;
 --fg:#bbb;
 --bs:#0004;
---io:.8;
+--io:0.8;
 }}
 body{background:var(--bg);color:var(--fg);font:20px/1.5 sans-serif;display:grid;place-items:start center;gap:1em;min-height:100vh;margin:0}
 main{padding:1em;display:grid;gap:1em}
@@ -28,7 +28,8 @@ section[events]{display:grid;gap:.5em}
 article{display:flex;justify-content:space-between}
 article.event{background:var(--cg);padding:.8em}
 table{text-align:center;border-collapse:collapse;background:var(--bg);border-color:var(--tg)}
-td,th{padding:.5em;border-color:var(--tg)}
+td,th{padding:.25em .5em;border-color:var(--tg);width:min-content}
+td>img{max-width:2em;display:block}
 .mon [w1],.tue [w2],.wed [w3],.thu [w4],.fri [w5],.sat [w6],.sun [w7]{background:var(--cg)}
 img[src='gloom.png']{z-index:-1;position:fixed;bottom:0;right:0;max-width:70vw;opacity:var(--io)}
 </style>
@@ -100,12 +101,12 @@ init()
 	<table id=arena border=1 >
 	<tr><th colspan=7>arena</th></tr>
 	<th w1>mon<th w2>tue<th w3>wed<th w4>thu<th w5>fri<th w6>sat<th w7>sun
-	<tr><td w1>fire<br>water
-		<td w2>wind<br>earth
-		<td w3>light<br>dark
-		<td w4>fire<br>water
-		<td w5>wind<br>earth
-		<td w6>light<br>dark
+	<tr><td w1><img src=img/elm1.png alt=aqua><img src=img/elm2.png alt=ignis>
+		<td w2><img src=img/elm3.png alt=terra><img src=img/elm4.png alt=ventus>
+		<td w3><img src=img/elm5.png alt=lux><img src=img/elm6.png alt=umbra>
+		<td w4><img src=img/elm1.png alt=aqua><img src=img/elm2.png alt=ignis>
+		<td w5><img src=img/elm3.png alt=terra><img src=img/elm4.png alt=ventus>
+		<td w6><img src=img/elm5.png alt=lux><img src=img/elm6.png alt=umbra>
 		<td w7>all
 	</table>
 </section>
