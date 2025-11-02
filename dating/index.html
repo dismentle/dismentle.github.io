@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content=width=device-width>
+<title>dating advice</title>
+<style>
+:root{
+--bg:#eee;--cg:#ccc;--fg:#000;--dt:#aaa;--dtc:#000;--es:#000;--fs:20px;
+}@media(prefers-color-scheme:dark){:root{
+--bg:#333;--cg:#444;--fg:#bbb;--dt:#222;--dtc:#fff;--es:#000;}}
+@media only screen and (resolution>=1.5x) {:root{--fs:18px}}
+@media only screen and (resolution>=2x) {:root{--fs:16px}}
+@media only screen and (aspect-ratio>1.0){article.date{grid-template-columns:1fr 1fr}date-name{grid-column:1/3}}
+body{background:var(--bg);color:var(--fg);font:var(--fs)/1.5 sans-serif;min-height:100vh;margin:0}
+header{margin:1em 0;padding:.5em 1.5em .5em 7em;color:#fff;display:inline-block;background:linear-gradient(90deg,#237,#24a)}
+header>a.home{position:absolute;left:1.5em;top:.5em;width:3.5em;height:3.5em;background:#eee;border-radius:50%;display:grid;place-items:center;color:#247;text-decoration:none}
+h1{margin:0;font-size:1em;display:inline-block;color:#fff}
+main{padding:.5em;display:grid;gap:1em;width:max-content;margin:auto}
+article.date{display:grid;gap:.5em}
+date-name{background:var(--dt);color:var(--dtc);padding:.25em}
+event-event{background:var(--cg);display:grid}
+event-name{background:var(--dnk);border-bottom:.125em solid var(--bg)}
+event-name>b{color:var(--es);margin:0 .5em}
+event-choice{padding:0 .25em}
+event-choice::before{content:'\2937';color:#777;padding-right:.5em}
+</style>
+<header><h1>Dating Advice</h1><a class=home href=..>Home</a></header>
+<main>
+<article class=date>
+	<date-name>Amber</date-name>
+	<event-event><event-name>
+			<b>Port</b>
+			Kitten Encounter
+		</event-name>
+		<event-choice>How about doing some night fishing?</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Academy</b>
+			Cafeteria Trick
+		</event-name>
+		<event-choice>Getting hungry. Gonna go to the cafeteria</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Tilia</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			Out of Habit
+		</event-name>
+		<event-choice>Take part in the raffle inside the store.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			Solved On the Spot
+		</event-name>
+		<event-choice>What's that? Looks suspicious.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Kasimira</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Impressive Skills
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			Flawless Accuracy
+		</event-name>
+		<event-choice>There's an event you can join in the game area.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Iris</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			The Bitter and the Sweet
+		</event-name>
+		<event-choice>It's still early. Chat a bit longer.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Academy</b>
+			Library Talk
+		</event-name>
+		<event-choice>Gonna look around inside the library.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Noya</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Foraging Cuisine
+		</event-name>
+		<event-choice>Don't go any deeper. Stop here and take a rest.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			The Professional
+		</event-name>
+		<event-choice>There's a show over there.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Shimiao</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			Alliance Sealed by Cake
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			Pressure Relief
+		</event-name>
+		<event-choice>There's an event you can join in the game area.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Ridge</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Mushroom Scent
+		</event-name>
+		<event-choice>Don't go any deeper. Stop here and take a rest.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			Cakes To-Go
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Jinglin</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			A Study in Dessert
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Cave</b>
+			Freshly Picked
+		</event-name>
+		<event-choice>Don't go any deeper. Stop here and take a rest.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Coronis</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Freshly Unearthed
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Academy</b>
+			Burning Gaze
+		</event-name>
+		<event-choice>Gonna look around inside the library.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Nanoha</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			Customized Sweetness
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			The Best Maid
+		</event-name>
+		<event-choice>There's an event you can join in the game area.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Canace</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			When It Rains, It Pours
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Academy</b>
+			Faculty Cafeteria
+		</event-name>
+		<event-choice>Getting hungry. Gonna go to the cafeteria.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Ann</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Gift from the Mountain God
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			View From High
+		</event-name>
+		<event-choice>There's an event you can join in the game area.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Freesia</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			The Mysterious Mushroom
+		</event-name>
+		<event-choice>Don't go any deeper. Stop here and take a rest.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			True Heart
+		</event-name>
+		<event-choice>It's still early. Chat a bit longer.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Flora</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			The Celebrity
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			Outside Help
+		</event-name>
+		<event-choice>There's a show over there.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Teresa</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Practice Makes Perfect
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			Bond-Aid
+		</event-name>
+		<event-choice>Haven't been to that area yet.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Minova</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Bioluminescence
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Academy</b>
+			Borrowing Books
+		</event-name>
+		<event-choice>Gonna look around inside the library.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Mistique</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			Archaeological Discovery
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Academy</b>
+			Material Gathering
+		</event-name>
+		<event-choice>Gonna look around inside the library.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Chixia</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			The Mural Master
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			Cake Artistry
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Cosette</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			New Food Discovery
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			The Lure of the Bling-Bling
+		</event-name>
+		<event-choice>Haven't been to that area yet.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Chitose</date-name>
+	<event-event><event-name>
+			<b>Port</b>
+			Port Talk
+		</event-name>
+		<event-choice>Take a small boat out for some coastal sightseeing.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			A Sugar-Tempered Blade
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Caramel</date-name>
+	<event-event><event-name>
+			<b>Port</b>
+			Secret Stage
+		</event-name>
+		<event-choice>Take a small boat out for some coastal sightseeing.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Market</b>
+			Artistic Integrity
+		</event-name>
+		<event-choice>Haven't been to that area yet.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Gerie</date-name>
+	<event-event><event-name>
+			<b>Cave</b>
+			The Cave Mass
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Port</b>
+			Sea Prayer
+		</event-name>
+		<event-choice>Take a small boat out for some coastal sightseeing.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Laru</date-name>
+	<event-event><event-name>
+			<b>Desert Shop</b>
+			Fry-Flavored Cake
+		</event-name>
+		<event-choice>Haven't had enough. Let's order some more.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Port</b>
+			Port Fishing Guide
+		</event-name>
+		<event-choice>How about doing some night fishing?</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Shia</date-name>
+	<event-event><event-name>
+			<b>Port</b>
+			Cruise of Ripples
+		</event-name>
+		<event-choice>Take a small boat out for some coastal sightseeing.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Cave</b>
+			Underground Drift
+		</event-name>
+		<event-choice>Keep exploring deeper.</event-choice>
+	</event-event>
+</article>
+<article class=date>
+	<date-name>Nazuna</date-name>
+	<event-event><event-name>
+			<b>Market</b>
+			"Lord of the Prize Claw"
+		</event-name>
+		<event-choice>There's an event you can join in the game area.</event-choice>
+	</event-event>
+	<event-event><event-name>
+			<b>Port</b>
+			Seaside Fishing
+		</event-name>
+		<event-choice>How about doing some night fishing?</event-choice>
+	</event-event>
+</article>
+</main>
