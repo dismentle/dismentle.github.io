@@ -5,9 +5,9 @@
 <title>dating advice</title>
 <style>
 :root{
---bg:#eee;--cg:#ccc;--fg:#000;--dt:#aaa;--dtc:#000;--es:#000;--fs:20px;
+--bg:#eee;--cg:#ccc;--fg:#000;--dt:#aaa;--dtc:#000;--es:#000;--eg:#eee;--fs:20px;
 }@media(prefers-color-scheme:dark){:root{
---bg:#333;--cg:#444;--fg:#bbb;--dt:#222;--dtc:#fff;--es:#000;}}
+--bg:#333;--cg:#444;--fg:#bbb;--dt:#222;--dtc:#fff;--es:#000;--eg:#999;}}
 @media only screen and (resolution>=1.5x) {:root{--fs:18px}}
 @media only screen and (resolution>=2x) {:root{--fs:16px}}
 @media only screen and (aspect-ratio>1.0){article.date{grid-template-columns:1fr 1fr}date-name{grid-column:1/3}}
@@ -19,9 +19,9 @@ main{padding:.5em;display:grid;gap:1em;width:max-content;margin:auto}
 article.date{display:grid;gap:.5em}
 date-name{background:var(--dt);color:var(--dtc);padding:.25em}
 event-event{background:var(--cg);display:grid}
-event-name{background:var(--dnk);border-bottom:.125em solid var(--bg)}
-event-name>b{color:var(--es);margin:0 .5em}
-event-choice{padding:0 .25em}
+event-name{border-bottom:.125em solid var(--bg)}
+event-name>b{color:var(--es);padding:0 .5em; background:var(--eg);border-radius:1em}
+event-name,event-choice{padding:0 .5em}
 event-choice::before{content:'\2937';color:#777;padding-right:.5em}
 </style>
 <header><h1>Dating Advice</h1><a class=home href=..>Home</a></header>
