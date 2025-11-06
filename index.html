@@ -26,7 +26,8 @@ h1>button{background:#e24161;color:#fff;font:bold 1rem sans-serif;border:none;pa
 h1>button{box-shadow:inset 0 0 0 1px #fff3, 0 .25em .125em var(--bs)}
 [events]{display:grid;gap:.5em}
 article{display:flex;justify-content:space-between}
-article.event{background:var(--cg);padding:.8em}
+article.event{background:var(--cg);padding:.4em;display:grid;}
+article.event>span{font-size:.9em}
 table{text-align:center;border-collapse:collapse;background:var(--bg);border-color:var(--tg)}
 td,th{padding:.25em .5em;border-color:var(--tg);width:min-content}
 td>img{width:2em;height:2em;display:block}
@@ -90,6 +91,8 @@ const event={
 const events = [
 	{start:new Date('2025-10-27T22:00:01-0700'),end:new Date('2025-10-28T02:00:01-0700'),name:'maintenance'},
 	{start:new Date('2025-10-28T02:00:01-0700'),end:new Date('2025-11-10T13:00:00-0700'),name:'shia event'},
+	{start:new Date('2025-11-10T21:00:01-0700'),end:new Date('2025-11-17T07:00:00-0700'),name:'Rovina: A Finale Echoing (Beta)'},
+	{start:new Date('2025-11-17T02:00:01-0700'),end:new Date('2025-11-17T02:00:00-0700'),name:'Chapter 3: Guild Sweet Guild'},
 ]
 init()
 </script>
