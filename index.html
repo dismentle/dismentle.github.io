@@ -24,7 +24,7 @@ main{padding:1em;display:grid;gap:1em}
 h1,h2,h3{margin:0;display:flex;justify-content:space-between;align-items:center;line-height:1}
 h1>button{background:#e24161;color:#fff;font:bold 1rem sans-serif;border:none;padding:.5em 1em;border-radius:2em}
 h1>button{box-shadow:inset 0 0 0 1px #fff3, 0 .25em .125em var(--bs)}
-[events]{display:grid;gap:.5em}
+[events],[arena]{display:grid;gap:.5em}
 article{display:flex;justify-content:space-between}
 article.event{background:var(--cg);padding:.4em;display:grid;}
 article.event>span{font-size:.9em}
@@ -89,8 +89,9 @@ const event={
 	}
 }
 const events = [
-	{start:new Date('2025-10-27T22:00:01-0700'),end:new Date('2025-10-28T02:00:01-0700'),name:'maintenance'},
-	{start:new Date('2025-10-28T02:00:01-0700'),end:new Date('2025-11-10T13:00:00-0700'),name:'shia event'},
+	{start:new Date('2025-10-27T22:00:01-0700'),end:new Date('2025-10-28T02:00:00-0700'),name:'Maintenance'},
+	{start:new Date('2025-10-28T02:00:01-0700'),end:new Date('2025-11-10T13:00:00-0700'),name:'Shia Event'},
+	{start:new Date('2025-11-10T20:00:01-0700'),end:new Date('2025-11-10T23:00:00-0700'),name:'Maintenance'},
 	{start:new Date('2025-11-10T21:00:01-0700'),end:new Date('2025-11-17T07:00:00-0700'),name:'A Finale Echoing (Beta)'},
 	{start:new Date('2025-11-17T02:00:01-0700'),end:new Date('2025-11-17T02:00:00-0700'),name:'Chapter 3: Guild Sweet Guild'},
 ]
@@ -107,8 +108,8 @@ init()
 <meter low=.3 high=.7 optimum=.0 value=.65></meter></article>
 </section>
 <section arena>
-	<table id=arena border=1 >
-	<tr><th colspan=7>arena</th></tr>
+	<h3>arena</h3>
+	<table id=arena border=1>
 	<th w1>mon<th w2>tue<th w3>wed<th w4>thu<th w5>fri<th w6>sat<th w7>sun
 	<tr><td w1><img src=img/elm1.png alt=aqua><img src=img/elm2.png alt=ignis>
 		<td w2><img src=img/elm3.png alt=terra><img src=img/elm4.png alt=ventus>
